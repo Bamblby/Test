@@ -5,6 +5,7 @@ from random import randrange
 LB = 300
 LV = 50
 
+
 x, y = randrange(0, LB, LV), randrange(0, LB, LV)
 apple = randrange(0, LB, LV), randrange(0, LB, LV)
 lenght = 1
