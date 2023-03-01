@@ -16,8 +16,6 @@ fps = 5
 pygame.init()
 sc = pygame.display.set_mode([LB, LB])
 clock = pygame.time.Clock()
-font_score = pygame.font.SysFont('Arial', 26, bold=True)
-font_end = pygame.font.SysFont('Arial', 26, bold=True)
 
 while True:
     sc.fill(pygame.Color('black'))
