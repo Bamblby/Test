@@ -6,11 +6,12 @@ LV = 50
 
 x, y = randrange(0, LB, LV), randrange(0, LB, LV)
 apple = randrange(0, LB, LV), randrange(0, LB, LV)
+dirs = {'W': True, 'S': True, 'A': True, 'D': True}
 lenght = 1
 snake = [(x, y)]
 dx, dy = 0, 0
 score = 0
-fps = 3
+fps = 5
 
 pygame.init()
 sc = pygame.display.set_mode([LB, LB])
@@ -47,14 +48,18 @@ while True:
 
     
     key = pygame.key.get_pressed()
-    if key[pygame.K_w]:
+    if key[pygame.K_w] and dirs['W']:
         dx, dy = 0, -1
+        dirs = {'W': True, 'S': False, 'A': True, 'D': True}
 
-    if key[pygame.K_s]:
+    if key[pygame.K_s] and dirs['S']:
         dx, dy = 0, 1
+        dirs = {'W': False, 'S': True, 'A': True, 'D': True}
 
-    if key[pygame.K_a]:
+    if key[pygame.K_a] and dirs['A']:
         dx, dy = -1, 0
+        dirs = {'W': True, 'S': True, 'A': True, 'D': False}
 
-    if key[pygame.K_d]:
+    if key[pygame.K_d] and dirs['D']:
         dx, dy = 1, 0
+        dirs = {'W': True, 'S': True, 'A': False, 'D': True}
